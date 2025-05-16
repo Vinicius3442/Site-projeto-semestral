@@ -1,0 +1,120 @@
+ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+ 
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #264346; /* fundo escuro */
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+ 
+  /* Container centralizado */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+ 
+  /* Header */
+  .site-header {
+    background-color: #263238;
+    padding: 20px 0;
+  }
+ 
+  .logo {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+ 
+  .logo-dvt {
+    color: #fff;
+  }
+ 
+  .logo-company {
+    color: #87bbaa;
+    margin-left: 4px;
+  }
+ 
+  .main-nav {
+    float: right;
+  }
+ 
+  .main-nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+ 
+  .main-nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+  }
+ 
+  .btn-accent {
+    background-color: #f7b600;
+    color: #264346;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+ 
+  /* Main Content */
+  .thank-you {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+  }
+ 
+  .thank-you h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+  }
+ 
+  .subtitle {
+    color: #f7b600;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+  }
+ 
+  .btn-home {
+    display: inline-block;
+    padding: 16px 80px;
+    font-size: 1.2rem;
+    color: #f7b600;
+    text-decoration: none;
+    border: 2px solid #f7b600;
+    border-radius: 40px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+ 
+  .btn-home:hover {
+    background-color: #f7b600;
+    color: #264346;
+  }
+ 
+  /* Footer */
+  .site-footer {
+    background-color: #1f3235;
+    padding: 12px 0;
+  }
+ 
+  .site-footer p {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #aaa;
+  }
+ 

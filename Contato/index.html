@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contato - Thermo Charge</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+ 
+  <header>
+    <div class="logo"><img src="../Assets/img/logo.png" alt="" height="10%" width="10%"></div>
+    <nav>
+      <a href="../index.html">Início</a>
+      <a href="../Sobre nós/index.html">Sobre</a>
+      <a href="../Contato/index.html">Contato</a>
+      <a href="../O produto/index.html" class="botao-destaque">Adquira ThermoCharge</a>
+    </nav>
+  </header>
+ 
+  <main class="contato-main">
+    <h1> Nosso Contato:</h1>
+    <p class="subtitulo">Tem alguma pergunta? Envie uma mensagem!</p>
+   
+    <form action="agradecimento.html" method="post" class="formulario">
+      <div class="linha">
+        <div class="campo">
+          <label for="email">Email:</label>
+          <input type="email" id="email" placeholder="yourmail@email.com" required />
+        </div>
+ 
+        <div class="campo">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" placeholder="Pedro" required />
+        </div>
+      </div>
+ 
+      <div class="linha">
+        <div class="campo">
+          <label for="telefone">Telefone:</label>
+          <input type="tel" id="telefone" placeholder="xx xx xxxx-xxxx" />
+        </div>
+
+        <div class="campo">
+          <label for="mensagem">Mensagem:</label>
+          <textarea id="mensagem" placeholder="Sua mensagem" rows="5"></textarea>
+        </div>
+      </div>
+      <div class="botao-container">
+        <button type="submit" class="btn-enviar" onclick="enviarFormulario(event)">Enviar</button>
+        <script src="script.js"></script>
+        <style>
+          
+        </style>
+      </div>
+    </form>
+  </main>
+ 
+  <footer>
+    © 2025 Thermo Charge. Todos os direitos reservados.
+  </footer>
+
+</body>
+</html>
