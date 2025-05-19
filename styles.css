@@ -78,7 +78,10 @@ section h5 {
 footer {
   background-color: #263238;
 }
-
+.logo-img {
+  width: 10%;
+  height: 10%;
+}
 .carousel-inner img {
   filter: brightness(85%);
 }
@@ -86,6 +89,10 @@ footer {
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   background-color: #37474f;
+}
+
+#show-when-mobile{
+  display: none;
 }
 
 /* Títulos e textos das seções */
@@ -96,6 +103,46 @@ section h2 {
 section .row h5,
 section .row p {
   color: #f0f4c3;
+}
+
+/* Responsividade */
+
+@media (max-width: 575.98px) {
+  .card-body {
+    padding: 0.75rem;
+  }
+  #show-when-mobile{
+    display: block;
+  }
+  header, footer {
+    padding: 1.5rem 0.5rem;
+    text-align: center;
+  }
+  .logo-img {
+    width: 80px;
+    height: auto;
+    max-width: 100%;
+    max-height: 50px;
+  }
+  .btn-warning{
+    font-size: 0.8rem;
+  }
+  section {
+    padding: 1rem;
+  }
+  section h2 {
+    font-size: 1.3rem;
+  }
+  section h5 {
+    font-size: 1rem; /* responsividade mobile */
+  }
+  img-fluid mb-4{
+    width: 100%;
+    height: auto;
+  }
+  .carousel-inner img {
+    height: 110px;
+  }
 }
 .btn-outline-warning {
   border-color: #ffc107;
