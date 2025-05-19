@@ -68,7 +68,7 @@
       justify-content: center;
       align-items: center;
     }
-              .contact-link-btn {
+          .contact-link-btn {
             display: inline-block;
             padding: 0.6em 2em;
             background-color: #ffc107;
@@ -82,7 +82,8 @@
             margin-top: 1em;
             box-shadow: 0 2px 8px rgba(0,0,0,0.07);
           }
-          .contact-link-btn:hover, .contact-link-btn:focus {
+          .contact-link-btn:hover,
+          .contact-link-btn:focus {
             background-color: #e0a800;
             color: #fff;
           }
