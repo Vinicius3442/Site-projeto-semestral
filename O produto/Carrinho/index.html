@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ThermoCharger</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css" />
+  <script src="https://kit.fontawesome.com/a2d9d5a54f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="p-3 text-white bg-dark">
+    <div class="container d-flex justify-content-between align-items-center">
+      <img src="../../Assets/img/logo.png" alt="Logo da Empresa" height="10%" width="10%">
+      <nav class="d-flex gap-3 align-items-center">
+        <a href="../index.html" class="text-white text-decoration-none">Início</a>
+        <a href="../Sobre nós/index.html" class="text-white text-decoration-none">Sobre</a>
+        <a href="../Contato/index.html" class="text-white text-decoration-none">Contato</a>
+      </nav>
+    </div>
+  </header>
+<main class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <h2 class="mb-4">Carrinho de Compras</h2>
+            <div class="table-responsive cart-table-container">
+                <table class="table align-middle table-hover table-bordered shadow-sm">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Produto</th>
+                            <th>Preço</th>
+                            <th>Quantidade</th>
+                            <th>Total</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-items">
+                    </tbody>
+                </table>
+                <div class="d-flex justify-content-end">
+                    <div>
+                        <div id="cart-produto-total" class="mb-1"></div>
+                        <div id="frete-info" class="mb-1"></div>
+                        <div id="cart-final-total" class="fw-bold fs-5"></div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end mt-3">
+                    <a href="#" id="finalizar-compra-btn" class="btn btn-warning fw-semibold">Finalizar Compra</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+
+</main>

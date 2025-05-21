@@ -10,9 +10,9 @@
   <script src="https://kit.fontawesome.com/a2d9d5a54f.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header class="p-3 text-white">
+  <header class="p-3 text-white bg-dark">
     <div class="container d-flex justify-content-between align-items-center">
-      <img src="../Assets/img/logo.png" alt="Logo da Empresa" height="10%" width="10%">
+      <img src="../Assets/img/logo.png" alt="Logo da Empresa" height="60" width="60">
       <nav class="d-flex gap-3 align-items-center">
         <a href="../index.html" class="text-white text-decoration-none">Início</a>
         <a href="../Sobre nós/index.html" class="text-white text-decoration-none">Sobre</a>
@@ -21,43 +21,38 @@
       </nav>
     </div>
   </header>
- 
-  <main class="main-content">
-    <section class="hero-section">
-      <h1 class="hero-title">Carregue com segurança<br />o seu celular!</h1>
-      <section class="product-details">
-        <h2>Detalhes do Produto</h2>
-        <div class="product-info">
-        <img src="../Assets/img/Desenho circuito.jpg" alt="ThermoCharger" class="product-image" />
-          <div class="product-specs">
-            <ul>
-              <li><strong>Compatibilidade:</strong> Universal (Android e iOS)</li>
-              <li><strong>Segurança:</strong> Proteção contra superaquecimento</li>
-              <li><strong>Eficiência:</strong> Carregamento rápido e estável</li>
-              <li><strong>Material:</strong> Plástico ABS resistente ao calor</li>
-              <li><strong>Garantia:</strong> 12 meses</li>
-            </ul>
-            <div class="purchase-area">
-              <span class="product-price">R$ 66,90</span>
-              <a href="./Pagamento/index.html" class="btn-primary">Comprar agora</a>
-            </div>
-          </div>
-        </div>
-        <div class="product-benefits">
-          <h3>Por que escolher o ThermoCharger?</h3>
-          <ul>
-            <li>Evita acidentes domésticos causados por superaquecimento</li>
-            <li>Design compacto e portátil</li>
-            <li>Fácil de usar e instalar</li>
-            <li>Compatível com todos os modelos de celular</li>
-          </ul>
-          <a href="../Assets/pdf/Manual_TermoCharge_Sem_LED.pdf.pdf" class="btn-secondary" target="_blank">Manual de Uso</a>
-        </div>
 
-      </section>
-    </section>
+  <main class="container my-5">
+    <div class="row">
+      <div class="col-md-6 d-flex flex-column align-items-center">
+        <img src="../Assets/img/Modelo 3d captura.jpg" alt="Thermo Charger" class="img-fluid mb-3" style="max-width: 350px;">
+      </div>
+      <div class="col-md-6">
+        <h1 class="mb-3">Thermo Charger</h1>
+        <p class="lead">Carregue seus dispositivos com segurança, o nosso produto garante a segurança de seu carregador através de uma válvula solenoide.</p>
+        <ul>
+          <li>Portátil e leve</li>
+          <li>Compatível com USB</li>
+          <li>Design moderno</li>
+        </ul>
+        <h2 class="text-success mt-4 mb-3">R$ 66,90</h2>
+        <a href="./Carrinho/index.html"><button class="btn btn-warning btn-lg fw-semibold mb-3">Comprar agora</button></a>
+        <p><i class="fas fa-truck"></i> Frete grátis para todo o Brasil</p>
+        <p><i class="fas fa-shield-alt"></i> Garantia de 1 ano</p>
+        <hr>
+        <div class="mt-4">
+          <h5>Manual do Produto</h5>
+          <a href="../Assets/pdf/Manual_TermoCharge_Sem_LED.pdf.pdf" class="btn btn-outline-primary mb-2" target="_blank">
+            <i class="fas fa-file-download"></i> Baixar Manual (PDF)
+          </a>
+          <p class="mb-0">
+            <a href="../Termos de uso/index.html" class="text-decoration-underline">Termos de uso</a>
+          </p>
+        </div>
+      </div>
+    </div>
   </main>
- 
+
   <footer class="footer">
     <p>© 2025 Thermo Charge. Todos os direitos reservados.</p>
   </footer>
