@@ -7,7 +7,7 @@ function atualizarCarrinho() {
     const subtotal = precoUnitario * quantidade;
     let frete = fretes[estado];
     let freteGratis = false;
-    if (subtotal > 100) {
+    if (subtotal > 169) {
         frete = 0;
         freteGratis = true;
     }
