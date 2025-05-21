@@ -14,44 +14,73 @@
     <div class="container d-flex justify-content-between align-items-center">
       <img src="../../Assets/img/logo.png" alt="Logo da Empresa" height="10%" width="10%">
       <nav class="d-flex gap-3 align-items-center">
-        <a href="../index.html" class="text-white text-decoration-none">Início</a>
-        <a href="../Sobre nós/index.html" class="text-white text-decoration-none">Sobre</a>
-        <a href="../Contato/index.html" class="text-white text-decoration-none">Contato</a>
+        <a href="../../index.html" class="text-white text-decoration-none">Início</a>
+        <a href="../../Sobre nós/index.html" class="text-white text-decoration-none">Sobre</a>
+        <a href="../../Contato/index.html" class="text-white text-decoration-none">Contato</a>
+        <a href="../../O produto/index.html" class="btn btn-warning text-dark fw-semibold">Adquira o Thermo Charger</a>
       </nav>
     </div>
   </header>
 <main class="container my-5">
-    <div class="row justify-content-center">
-        <div class="col-lg-8">
-            <h2 class="mb-4">Carrinho de Compras</h2>
-            <div class="table-responsive cart-table-container">
-                <table class="table align-middle table-hover table-bordered shadow-sm">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>Produto</th>
-                            <th>Preço</th>
-                            <th>Quantidade</th>
-                            <th>Total</th>
-                            <th>Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody id="cart-items">
-                    </tbody>
-                </table>
-                <div class="d-flex justify-content-end">
-                    <div>
-                        <div id="cart-produto-total" class="mb-1"></div>
-                        <div id="frete-info" class="mb-1"></div>
-                        <div id="cart-final-total" class="fw-bold fs-5"></div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card mb-3">
+              <div class="row g-0 align-items-center">
+                <div class="col-4">
+                  <img src="../../Assets/img/Modelo 3d captura.jpg" class="img-fluid rounded-start" alt="ThermoCharger">
+                </div>
+                <div class="col-8">
+                  <div class="card-body">
+                    <h5 class="card-title">ThermoCharger</h5>
+                    <p class="card-text">Carregador portátil com aquecimento inteligente.</p>
+                    <p class="card-text"><strong>Preço unitário:</strong> R$ 79,90</p>
+                    <div class="input-group mb-3" style="max-width: 150px; ">
+                      <button class="btn btn-outline-secondary" style="align-items: center; display: flex; justify-content: center;" id="decrement">-</button>
+                      <input type="text" style="max-height: 32px;" class="form-control text-center" id="quantity" value="1" readonly>
+                      <button class="btn btn-outline-secondary" style="align-items: center; display: flex; justify-content: center;" type="button" id="increment">+</button>
                     </div>
+                    <button class="btn btn-success" id="addToCart">Adicionar ao carrinho</button>
+                  </div>
                 </div>
-                <div class="d-flex justify-content-end mt-3">
-                    <a href="#" id="finalizar-compra-btn" class="btn btn-warning fw-semibold">Finalizar Compra</a>
-                </div>
+              </div>
             </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card p-3">
+              <h5 class="mb-3">Resumo do Carrinho</h5>
+              <div class="mb-2">
+                <label for="estado" class="form-label">Selecione seu estado:</label>
+                <select class="form-select" id="estado">
+                  <option value="sp">São Paulo</option>
+                  <option value="rj">Rio de Janeiro</option>
+                  <option value="mg">Minas Gerais</option>
+                  <option value="outros">Outros</option>
+                </select>
+              </div>
+              <div class="mb-2">
+                <div class="progress" style="height: 25px;">
+                  <div id="progressBar" class="progress-bar" role="progressbar" style="width: 0%">R$ 0,00</div>
+                </div>
+                <small id="freteMsg" class="text-muted"></small>
+              </div>
+              <ul class="list-group mb-2">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  Subtotal
+                  <span id="subtotal">R$ 79,90</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  Frete
+                  <span id="frete">R$ 15,00</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center fw-bold">
+                  Total
+                  <span id="total">R$ 94,90</span>
+                </li>
+              </ul>
+              <button class="btn btn-primary w-100" id="finalizarCompra">Finalizar Compra</button>
+            </div>
+          </div>
         </div>
-    </div>
-
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="script.js"></script>
 
