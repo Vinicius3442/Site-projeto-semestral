@@ -1,4 +1,4 @@
-const precoUnitario = 79.90;
+const precoUnitario = 69.90;
 const fretes = { sp: 15, rj: 20, mg: 22, outros: 30 };
 let quantidade = 1;
 let estado = 'sp';
@@ -7,7 +7,7 @@ function atualizarCarrinho() {
     const subtotal = precoUnitario * quantidade;
     let frete = fretes[estado];
     let freteGratis = false;
-    if (subtotal > 169) {
+    if (quantidade >= 3) {
         frete = 0;
         freteGratis = true;
     }
@@ -18,15 +18,15 @@ function atualizarCarrinho() {
     document.getElementById('total').textContent = `R$ ${total.toFixed(2)}`;
 
     // Barra de progresso
-    let progresso = Math.min((subtotal / 100) * 100, 100);
+    let progresso = Math.min((quantidade / 3) * 100, 100);
     document.getElementById('progressBar').style.width = `${progresso}%`;
-    document.getElementById('progressBar').textContent = `R$ ${subtotal.toFixed(2)}`;
+    document.getElementById('progressBar').textContent = `Qtd: ${quantidade}`;
     document.getElementById('progressBar').classList.toggle('bg-success', freteGratis);
 
     // Mensagem de frete
     document.getElementById('freteMsg').textContent = freteGratis
         ? 'Parabéns! Você ganhou frete grátis.'
-        : `Faltam R$ ${(100 - subtotal > 0 ? (100 - subtotal).toFixed(2) : '0,00')} para frete grátis.`;
+        : `Compre mais ${3 - quantidade} unidade(s) para frete grátis.`;
 }
 
 document.getElementById('increment').onclick = () => {
@@ -79,7 +79,7 @@ document.getElementById('finalizarCompra').onclick = () => {
     });
 
     setTimeout(() => {
-        window.location.href = "../Pagamento/index.html";
+        window.location.href = "../Captcha/index.html";
     }, 4000);
 };
 
