@@ -1,5 +1,27 @@
 const precoUnitario = 69.90;
-const fretes = { sp: 15, rj: 20, mg: 22, outros: 30 };
+const fretes = {
+    sp: 10,   // Sede
+    rj: 18,
+    mg: 17,
+    pr: 20,
+    sc: 23,
+    rs: 25,
+    es: 19,
+    ba: 28,
+    df: 22,
+    go: 24,
+    ms: 21,
+    to: 30,
+    pa: 35,
+    ma: 38,
+    pi: 36,
+    ce: 40,
+    rn: 42,
+    pb: 43,
+    pe: 41,
+    al: 39,
+    se: 37
+};
 let quantidade = 1;
 let estado = 'sp';
 
