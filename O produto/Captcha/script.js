@@ -51,6 +51,6 @@ function generateCaptcha(length = 6) {
 
         refreshCaptcha.addEventListener('click', setCaptcha);
 
-        // Inicializa o captcha ao carregar a página
+        // chama a func
         setCaptcha();
     }
