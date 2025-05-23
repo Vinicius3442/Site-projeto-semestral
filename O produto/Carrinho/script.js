@@ -1,4 +1,4 @@
-const precoUnitario = 69.90;
+const precoUnitario = 66.99;
 const fretes = {
     sp: 10,   // Sede
     rj: 18,
