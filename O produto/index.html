@@ -21,40 +21,85 @@
       </nav>
     </div>
   </header>
-
   <main class="container my-5">
     <div class="row">
-      <div class="col-md-6 d-flex flex-column align-items-center">
-        <img src="../Assets/img/Modelo 3d captura.jpg" alt="Thermocharger" class="img-fluid mb-3" style="max-width: 350px;">
-      </div>
       <div class="col-md-6">
-        <h1 class="mb-3">Thermocharger</h1>
-        <p class="lead">Carregue seus dispositivos com segurança, o nosso produto garante a segurança de seu carregador através de uma válvula solenoide.</p>
+        <h1 class="mb-2">Thermocharger</h1>
+        <div class="mb-2">
+          <span class="text-warning">
+          </span>
+          <div class="mt-2">
+              <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+              <span class="ms-2">4/5</span>
+              <span class="ms-2">(32 avaliações)</span>
+          </div>
+        </div>
+        <p class="lead">Carregue seus dispositivos com segurança. O Thermocharger protege seu carregador com uma válvula solenoide inovadora.</p>
         <ul>
           <li>Portátil e leve</li>
           <li>Compatível com USB</li>
           <li>Design moderno</li>
+          <li>Proteção contra superaquecimento</li>
+          <li>Garantia de 1 ano</li>
         </ul>
-        <h2 class="text-success mt-4 mb-3">R$ 66,99</h2>
-        <a href="./Carrinho/index.html"><button class="btn btn-warning btn-lg fw-semibold mb-3">Comprar agora</button></a>
-        <p><i class="fas fa-truck"></i> Frete grátis acima de 3 unidades</p>
-        <p><i class="fas fa-shield-alt"></i> Garantia de 1 ano</p>
+        <div class="my-3">
+          <span class="fs-3 text-success fw-bold">R$ 66,99</span>
+          <span class="text-muted text-decoration-line-through ms-2">R$ 89,99</span>
+          <span class="badge bg-warning text-dark ms-2">-25%</span>
+        </div>
+        <a href="./Carrinho/index.html">
+          <button class="btn btn-warning btn-lg fw-semibold mb-2 w-100">
+            <i class="fas fa-shopping-cart"></i> Comprar agora
+          </button>
+        </a>
+        <div class="mb-3">
+          <p class="mb-1"><i class="fas fa-truck"></i> Frete grátis acima de 3 unidades</p>
+          <p class="mb-1"><i class="fas fa-shield-alt"></i> Garantia de 1 ano</p>
+          <p class="mb-1"><i class="fas fa-undo"></i> Devolução grátis em até 7 dias</p>
+        </div>
         <hr>
         <div class="mt-4">
           <h5>Manual do Produto</h5>
-          <a href="../Assets/pdf/Manual_TermoCharge_Sem_LED.pdf.pdf" class="btn btn-outline-primary mb-2" target="_blank">
+          <a href="../Assets/pdf/Manual_TermoCharge_Sem_LED.pdf.pdf" class="btn btn-outline-warning" target="_blank">
             <i class="fas fa-file-download"></i> Baixar Manual (PDF)
           </a>
           <p class="mb-0">
-            <a href="../Termos de uso/index.html" class="text-decoration-underline">Termos de uso</a>
+            <a href="../Termos de uso/index.html" class="text-decoration-underline btn-outline-warning">Termos de uso</a>
           </p>
         </div>
       </div>
+      <div class="col-md-6 d-flex align-items-center justify-content-center">
+        <div>
+          <img id="mainProductImg" src="../Assets/img/Modelo 3d captura.jpg" alt="Thermocharger" class="img-fluid rounded border mb-3" style="max-height: 350px; object-fit: contain;">
+          <div class="d-flex justify-content-center gap-2">
+            <img src="../Assets/img/produto1.jpg" alt="Thermocharger 1" class="img-thumbnail" style="width: 70px; height: 70px; object-fit: cover; cursor:pointer;" onclick="document.getElementById('mainProductImg').src=this.src">
+            <img src="../Assets/img/produto2.jpg" alt="Thermocharger 2" class="img-thumbnail" style="width: 70px; height: 70px; object-fit: cover; cursor:pointer;" onclick="document.getElementById('mainProductImg').src=this.src">
+            <img src="../Assets/img/produto3.jpg" alt="Thermocharger 3" class="img-thumbnail" style="width: 70px; height: 70px; object-fit: cover; cursor:pointer;" onclick="document.getElementById('mainProductImg').src=this.src">
+            <img src="../Assets/img/produto4.jpg" alt="Thermocharger 4" class="img-thumbnail" style="width: 70px; height: 70px; object-fit: cover; cursor:pointer;" onclick="document.getElementById('mainProductImg').src=this.src">
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="my-5">
+    <div class="row">
+      <div class="col-md-8">
+        <h3>Descrição do Produto</h3>
+        <p>
+          O Thermocharger é a solução ideal para quem busca segurança e praticidade ao carregar dispositivos eletrônicos. Com tecnologia de proteção térmica e design compacto, é perfeito para uso em casa, no trabalho ou em viagens.
+        </p>
+        <h4>Especificações Técnicas</h4>
+        <ul>
+          <li>Entrada: USB-C / USB-A</li>
+          <li>Saída: 5V/2A</li>
+          <li>Material: Polímero resistente ao calor</li>
+          <li>Peso: 120g</li>
+          <li>Dimensões: 10cm x 4cm x 2cm</li>
+        </ul>
+      </div>
     </div>
   </main>
-
-  <footer class="footer">
-    <p>© 2025 Thermocharger. Todos os direitos reservados.</p>
-  </footer>
+<footer class="footer">
+  <p>© 2025 Thermocharger. Todos os direitos reservados.</p>
+</footer>
 </body>
 </html>
