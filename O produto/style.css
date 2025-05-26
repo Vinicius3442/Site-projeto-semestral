@@ -172,6 +172,25 @@ main {
   font-size: 0.9rem;
   color: #aaaaaa;
 }
+.product-gallery {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .thumbnail-container {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    .img-thumbnail {
+      transition: transform 0.2s;
+    }
+    .img-thumbnail:hover {
+      transform: scale(1.05);
+    }
+    .product-info-section {
+      padding-left: 30px;
+    }
 
 /* Responsivo */
 @media (max-width: 900px) {
@@ -186,4 +205,10 @@ main {
   .hero-section {
     max-width: 100%;
   }
+}
+@media (max-width: 768px) {
+  .product-info-section {
+    padding-left: 0;
+    margin-top: 30px;
+ }
 }

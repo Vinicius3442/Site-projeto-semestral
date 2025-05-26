@@ -1,0 +1,58 @@
+    .payment-method label {
+      cursor: pointer;
+      border: 2px solid #ffc400;
+      border-radius: 8px;
+      padding: 12px 18px;
+      margin-bottom: 10px;
+      width: 100%;
+      transition: background 0.2s, border 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #ffc400;
+    }
+    .payment-method input[type="radio"]:checked + label {
+      background: #ffc400;
+      color: #263238;
+      border-color: #ffc400;
+    }
+    .payment-method input[type="radio"] {
+      display: none;
+    }
+    .order-summary {
+      background: #212529;
+      border-radius: 12px;
+      padding: 24px;
+      color: #fff;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+    }
+    .order-summary h6 {
+      color: #ffc400;
+    }
+    .order-summary .badge {
+      background: #ffc400;
+      color: #263238;
+    }
+    .order-summary .price {
+      color: #ffc400;
+      font-weight: bold;
+    }
+    .card{
+      background-color: #314C53;
+    }
+    .card-body {
+      border-radius: 15px;
+    }
+    input:focus, select:focus {
+  border-color: #ffc400;
+  box-shadow: 0 0 0 0.25rem rgba(255, 196, 0, 0.25);
+}
+button.btn-apply {
+  background-color: #ffc400;
+  color: #263238;
+  border: none;
+  margin-top: 6px;
+}
+button.btn-apply:hover {
+  background-color: #e6b800;
+}
