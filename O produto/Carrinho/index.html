@@ -113,8 +113,7 @@
       <!-- Order Summary -->
             <div class="col-lg-4">
         <div class="order-summary mb-4">
-          <h6 class="mb-3">Resumo do Pedido</h6>
-          
+            <h6 class="mb-3">Resumo do Pedido</h6>
           <!-- Seletor de Quantidade -->
           <div class="mb-3">
             <label class="form-label text-white">Quantidade</label>
@@ -169,80 +168,7 @@
       </div>
     </div>
   </main>
-<script>
-// Mostrar/ocultar campos de cartão
-document.querySelectorAll('input[name="pagamento"]').forEach(input => {
-  input.addEventListener('change', () => {
-    document.getElementById('cartao-info').style.display = 
-      input.id === 'cartao' ? 'block' : 'none';
-  });
-});
-
-// Atualiza quantidade e recalcula total
-function updateQuantity(delta) {
-  const quantityInput = document.getElementById('quantity');
-  let quantity = parseInt(quantityInput.value) || 1;
-  quantity = Math.max(1, quantity + delta);
-  quantityInput.value = quantity;
-  updateResumo();
-}
-
-// Aplica cupom
-function applyDiscount() {
-  const cupom = document.getElementById('cupom').value.trim().toUpperCase();
-  const cupomHelp = document.getElementById('cupomHelp');
-  let desconto = 0;
-
-  if (cupom === 'THERMO10') {
-    desconto = 10;
-    cupomHelp.textContent = 'Cupom aplicado com sucesso!';
-  } else {
-    cupomHelp.textContent = 'Cupom inválido.';
-  }
-
-  document.getElementById('desconto').dataset.value = desconto;
-  updateResumo();
-}
-
-// Atualiza resumo
-function updateResumo() {
-  const unitPrice = 66.99;
-  const quantity = parseInt(document.getElementById('quantity').value);
-  const frete = parseFloat(document.getElementById('frete').value) || 0;
-  const desconto = parseFloat(document.getElementById('desconto').dataset?.value || 0);
-
-  const subtotal = unitPrice * quantity;
-  const total = subtotal + frete - desconto;
-
-  document.getElementById('subtotal').textContent = `R$ ${subtotal.toFixed(2)}`;
-  document.getElementById('freteResumo').textContent = `R$ ${frete.toFixed(2)}`;
-  document.getElementById('desconto').textContent = `R$ ${desconto.toFixed(2)}`;
-  document.getElementById('totalResumo').textContent = `R$ ${total.toFixed(2)}`;
-}
-
-document.getElementById('frete').addEventListener('change', updateResumo);
-
-// API ViaCEP
-document.getElementById('cep').addEventListener('blur', () => {
-  const cep = document.getElementById('cep').value.replace(/\D/g, '');
-  if (cep.length !== 8) return;
-
-  fetch(`https://viacep.com.br/ws/${cep}/json/`)
-    .then(response => response.json())
-    .then(data => {
-      if (!data.erro) {
-        document.getElementById('endereco').value = data.logradouro;
-        document.getElementById('cidade').value = data.localidade;
-        document.getElementById('estado').value = data.uf;
-      }
-    });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('desconto').dataset.value = 0;
-  updateResumo();
-});
-</script>
+<script src="script.js"></script>
 
   <footer class="text-white text-center py-3 mt-5">
     <a href="#" class="text-white text-decoration-none"><p class="mb-0">&copy;2025 Thermocharger. Todos os direitos reservados</p></a>

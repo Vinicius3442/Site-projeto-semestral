@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pagamento via Boleto - Thermocharger</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body class="bg-dark text-white">
+  <main class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card shadow border-0 p-4">
+          <h2 class="text-center text-warning mb-4">Pagamento via Boleto</h2>
+
+          <p class="text-center mb-3">Abaixo está o seu boleto bancário. Você pode imprimi-lo ou pagá-lo digitalmente.</p>
+
+          <div class="ratio ratio-16x9 mb-4 border border-warning rounded shadow-sm">
+            <iframe src="../../../Assets/pdf/boletoPix.pdf" type="application/pdf" allowfullscreen></iframe>
+          </div>
+
+          <div class="d-flex flex-column flex-md-row justify-content-between gap-3">
+            <a href="../../../Assets/pdf/boletoPix.pdf" download class="btn btn-warning text-dark fw-bold flex-fill">Baixar Boleto (PDF)</a>
+            <button class="btn btn-outline-warning flex-fill" onclick="confirmarBoleto()">Já paguei</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>|
+</body>
+</html>

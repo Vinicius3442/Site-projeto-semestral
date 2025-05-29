@@ -56,3 +56,34 @@ button.btn-apply {
 button.btn-apply:hover {
   background-color: #e6b800;
 }
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.quantity-selector button {
+  background: #ffc107;
+  color: #212529;
+  border: none;
+  width: 32px;
+  height: 32px;
+  font-size: 1.25rem;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+.quantity-selector button:hover {
+  background: #e0a800;
+}
+.quantity-selector input[type="number"] {
+  width: 60px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: 2px solid #ffc107;
+  background: #212529;
+  color: #fff;
+  border-radius: 8px;
+  margin: 0 0.25rem;
+  padding: 0.25rem 0;
+  appearance: textfield;
+}

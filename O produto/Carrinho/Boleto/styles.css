@@ -1,0 +1,28 @@
+body {
+  background-color: #121212;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.card {
+  background-color: #1f2a2e;
+  border-radius: 12px;
+  color: #fff;
+}
+
+.btn-warning {
+  background-color: #ffc400;
+  border: none;
+}
+
+.btn-warning:hover {
+  background-color: #e6b800;
+}
+
+.btn-outline-warning:hover {
+  background-color: #ffc400;
+  color: #121212;
+}
+
+iframe {
+  border-radius: 6px;
+}
