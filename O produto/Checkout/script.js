@@ -47,11 +47,11 @@ function processPaymentSubmit() {
     Swal.fire({
       icon: 'success',
       title: pagamento === 'Cartao' ? 'Compra finalizada!' : `Pagamento via ${pagamento}!`,
-      text: pagamento === 'Cartao' ? 'Pagamento via cartão processado.' : `Você será redirecionado para a página do ${pagamento}.`,
+      text: pagamento === 'Cartao' ? 'Pagamento via cartão processado.' : `Você será redirecionado para a página de início.`,
       confirmButtonText: 'OK'
-    }).then(() => {
-      if (routes[pagamento]) window.location.href = routes[pagamento];
-    });
+      }).then(() => {
+        window.location.href = '../../../index.html';
+      });
   });
 }
 
