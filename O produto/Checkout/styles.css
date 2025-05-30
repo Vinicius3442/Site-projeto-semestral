@@ -11,6 +11,9 @@
       gap: 10px;
       color: #ffc400;
     }
+    .center{
+      align-content: center;
+    }
     .payment-method input[type="radio"]:checked + label {
       background: #ffc400;
       color: #263238;
