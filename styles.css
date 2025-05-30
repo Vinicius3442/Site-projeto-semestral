@@ -62,7 +62,9 @@ section h2,
 section h5 {
   color: #ffe082;
 }
-
+.card{
+  background-color: #3a5d61;
+}
 .card-body {
   background-color: #3a5d61;
   color: #eceff1;

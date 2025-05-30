@@ -35,6 +35,8 @@ function confirmarPagamento() {
         title: 'Pagamento confirmado!',
         text: 'Obrigado por sua compra. Em breve você receberá uma confirmação por e-mail.',
         confirmButtonColor: '#ffc400'
+      }).then(() => {
+        window.location.href = '../../../index.html';
       });
     }
   });
