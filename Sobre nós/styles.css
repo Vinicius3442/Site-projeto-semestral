@@ -25,15 +25,6 @@
       letter-spacing: 0.01em;
     }
 
-    .logo img {
-      height: 48px;
-      width: auto;
-      filter: drop-shadow(0 2px 8px #0008);
-      transition: transform var(--transition);
-    }
-    .logo img:hover {
-      transform: scale(1.07) rotate(-3deg);
-    }
 
     .menu {
       list-style: none;

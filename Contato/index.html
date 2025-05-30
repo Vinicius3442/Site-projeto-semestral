@@ -21,41 +21,45 @@
       </nav>
     </div>
   </header>
-  <section class="contact-section">
-    <div class="contact-container">
-      <h2 class="contact-title">Fale Conosco</h2>
-      <form>
-        <label for="nome" class="contact-label">Nome</label>
-        <input type="text" class="contact-input" id="nome" name="nome" required>
-
-        <label for="email" class="contact-label">E-mail</label>
-        <input type="email" class="contact-input" id="email" name="email" required>
-
-        <label for="assunto" class="contact-label">Assunto</label>
-        <input type="text" class="contact-input" id="assunto" name="assunto" required>
-
-        <label for="mensagem" class="contact-label">Mensagem</label>
-        <textarea class="contact-textarea" id="mensagem" name="mensagem" rows="4" required></textarea>
-        <div class="checkbox-group">
-          <div class="form-check">
-            <input class="form-check-input styled-checkbox" type="checkbox" id="newsletter" name="newsletter">
-            <label class="form-check-label" for="newsletter">Desejo receber novidades e promoções por e-mail</label>
+  <main class="container my-5">
+    <div class="row">
+      <!-- Ccontact Form -->
+      <div class="col-lg-8 mb-4">
+      <div class="card shadow border-0">
+        <div class="card-body">
+        <h2 class="mb-4 text-warning">Insira sua mensagem</h2>
+        <form id="checkoutForm">
+          <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="firstName" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="firstName" required>
           </div>
-          <div class="form-check">
-            <input class="form-check-input styled-checkbox" type="checkbox" id="termos" name="termos" required>
-            <label class="form-check-label" for="termos">Li e concordo com os <a href="../Termos de uso/index.html">termos de uso</a></label>
+          <div class="col-md-6 mb-3">
+            <label for="lastName" class="form-label">Sobrenome</label>
+            <input type="text" class="form-control" id="lastName" required>
           </div>
-        </div>
-        <div class="center">
-          <a href="./Obrigado/index.html" class="contact-link-btn">Enviar</a>
+          <div class="col-md-6 mb-3">
+            <label for="email" class="form-label">E-mail</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="phone" class="form-label">Telefone</label>
+            <input type="tel" class="form-control" id="phone" required>
+          </div>
+          <!-- Mensagem-->
+          <div class="col-12 mb-3">
+            <label for="message" class="form-label">Mensagem</label>
+            <textarea class="form-control" id="message" rows="4" required></textarea>
+        </form>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-warning text-dark fw-semibold">Finalizar Compra</button>
+          </div>
         </div>
         <style>
-          .form-check-label{
-            color: black;
-          }
         </style>
-      </form>
+      </div>
     </div>
-  </section>
+  </main>
 </body>
 </html>
