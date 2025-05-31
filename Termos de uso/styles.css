@@ -1,167 +1,84 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: Arial, sans-serif;
-    background-color: #314C53;
-    color: #333;
-    line-height: 1.6;
-    padding: 20px;
-}
-main {
-    background-color: #314C53;
-}
-
-header {
-    background-color: #243a3a;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-header .logo {
-    font-size: 1.5rem;
-}
-
-main {
-    max-width: 800px;
-    margin: 40px auto;
-    background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-h1 {
-    color: #3d5e5e;
-    margin-bottom: 20px;
-}
-.dark-green {
-    color: #2a4141;
-}
-.green {
-    color: #3d5e5e;
-}
-h2 {
-    color: #3d5e5e;
-    margin-top: 30px;
-    margin-bottom: 10px;
-}
-
-p {
-    margin-bottom: 15px;
-}
-
-ul {
-    margin-left: 20px;
-    margin-bottom: 15px;
-}
-
-footer {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 0.9rem;
-    color: #666;
-}
-
-a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-    body {
-        background: #f6f8fa;
-        font-family: 'Segoe UI', Arial, sans-serif;
-        margin: 0;
-        padding: 0;
+      background-color: #264346;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-family: Arial, sans-serif;
     }
-
-    .container {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 0 20px;
+    .container-term {
+      width: 95%;
+      max-width: 900px;
+      margin: 40px auto 0 auto;
+      background: #223136;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      padding: 40px 32px 32px 32px;
     }
-    main {
-        background: #fff;
-        max-width: 800px;
-        margin: 40px auto 0 auto;
-        padding: 40px 30px 30px 30px;
-        border-radius: 12px;
-        box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    h1, h2 {
+      font-family: 'Merriweather', serif;
     }
     h1 {
-        color: #003366;
-        margin-bottom: 18px;
-        font-size: 2.2rem;
+      color: #f7b600;
+      font-size: 2.2rem;
+      margin-bottom: 24px;
+      text-align: center;
     }
     h2 {
-        color: #00509e;
-        margin-top: 28px;
-        margin-bottom: 10px;
-        font-size: 1.3rem;
+      color: #87bbaa;
+      font-size: 1.3rem;
+      margin-top: 32px;
+      margin-bottom: 10px;
     }
-    ul {
-        margin-left: 22px;
-        margin-bottom: 18px;
-    }
-    p, li {
-        color: #222;
-        font-size: 1.05rem;
-        line-height: 1.6;
+    ul, p {
+      color: #fff;
+      font-size: 1.05rem;
     }
     .acceptance-form {
-        margin-top: 35px;
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        flex-wrap: wrap;
-        background: #819b9b;
-        padding: 18px 20px;
-        border-radius: 8px;
-        box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+      margin-top: 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
     }
     .checkbox-label {
-        display: flex;
-        align-items: center;
-        font-size: 1rem;
-        gap: 8px;
-        cursor: pointer;
-        color: #243a3a;
-    }
-    .acceptance-form input[type="checkbox"] {
-        accent-color: #243a3a;
-        width: 20px;
-        height: 20px;
-        margin-right: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1rem;
+      color: #fff;
     }
     .accept-btn {
-        background: #243a3a;;
-        color: #fff;
-        border: none;
-        border-radius: 6px;
-        padding: 10px 22px;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: background 0.2s;
+      background-color: #f7b600;
+      color: #264346;
+      padding: 10px 32px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: background 0.2s, color 0.2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
     .accept-btn:hover {
-        background: #1b2c2c;
+      background-color: #fff;
+      color: #264346;
     }
-
+    .site-footer {
+      background-color: #1f3235;
+      padding: 12px 0;
+      margin-top: 40px;
+    }
+    .site-footer p {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #aaa;
+      margin: 0;
+    }
     @media (max-width: 600px) {
-        main {
-            padding: 18px 6px;
-        }
-        .acceptance-form {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 10px;
-        }
+      .container-term {
+        padding: 18px 6px;
+      }
+      h1 {
+        font-size: 1.3rem;
+      }
     }
