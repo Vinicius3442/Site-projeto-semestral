@@ -1,48 +1,56 @@
 .nav-link-hover {
-    transition: color 0.2s;
+  transition: color 0.2s;
 }
 .nav-link-hover:hover {
-    color: #ffcc33 !important;
-    text-shadow: 0 2px 8px #0002;
+  color: #ffcc33 !important;
+  text-shadow: 0 2px 8px #0002;
 }
 
 .error-container {
-    animation: fadeInUp 1s;
-    max-width: 90vw;
-    margin: 0 auto;
-    padding: 24px;
-    box-sizing: border-box;
+  animation: fadeInUp 1s;
+  max-width: 90vw;
+  margin: 0 auto;
+  padding: 24px;
+  box-sizing: border-box;
 }
 
 .animate-bounce {
-    animation: bounce 1.2s infinite alternate;
+  animation: bounce 1.2s infinite alternate;
 }
 
 .sad-face {
-    display: inline-block;
-    animation: shake 1.2s infinite alternate;
-    font-size: 4rem;
+  display: inline-block;
+  animation: shake 1.2s infinite alternate;
+  font-size: 4rem;
 }
 
 @keyframes bounce {
-    0%   { transform: translateY(0); }
-    100% { transform: translateY(-18px); }
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-18px);
+  }
 }
 @keyframes shake {
-    0%   { transform: rotate(-8deg); }
-    100% { transform: rotate(8deg); }
+  0% {
+    transform: rotate(-8deg);
+  }
+  100% {
+    transform: rotate(8deg);
+  }
 }
 
 /* Responsividade */
 @media (max-width: 600px) {
-    .error-container {
-        padding: 12px;
-        font-size: 1rem;
-    }
-    .sad-face {
-        font-size: 2.5rem;
-    }
-    .nav-link-hover {
-        font-size: 1rem;
-    }
+  .error-container {
+    padding: 12px;
+    font-size: 1rem;
+  }
+  .sad-face {
+    font-size: 2.5rem;
+  }
+  .nav-link-hover {
+    font-size: 1rem;
+  }
 }

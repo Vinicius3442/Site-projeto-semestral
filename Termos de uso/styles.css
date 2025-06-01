@@ -1,84 +1,86 @@
 body {
-      background-color: #264346;
-      color: #fff;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      font-family: Arial, sans-serif;
-    }
-    .container-term {
-      width: 95%;
-      max-width: 900px;
-      margin: 40px auto 0 auto;
-      background: #223136;
-      border-radius: 16px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
-      padding: 40px 32px 32px 32px;
-    }
-    h1, h2 {
-      font-family: 'Merriweather', serif;
-    }
-    h1 {
-      color: #f7b600;
-      font-size: 2.2rem;
-      margin-bottom: 24px;
-      text-align: center;
-    }
-    h2 {
-      color: #87bbaa;
-      font-size: 1.3rem;
-      margin-top: 32px;
-      margin-bottom: 10px;
-    }
-    ul, p {
-      color: #fff;
-      font-size: 1.05rem;
-    }
-    .acceptance-form {
-      margin-top: 36px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 18px;
-    }
-    .checkbox-label {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 1rem;
-      color: #fff;
-    }
-    .accept-btn {
-      background-color: #f7b600;
-      color: #264346;
-      padding: 10px 32px;
-      border: none;
-      border-radius: 6px;
-      font-weight: bold;
-      font-size: 1.1rem;
-      transition: background 0.2s, color 0.2s;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
-    .accept-btn:hover {
-      background-color: #fff;
-      color: #264346;
-    }
-    .site-footer {
-      background-color: #1f3235;
-      padding: 12px 0;
-      margin-top: 40px;
-    }
-    .site-footer p {
-      text-align: center;
-      font-size: 0.95rem;
-      color: #aaa;
-      margin: 0;
-    }
-    @media (max-width: 600px) {
-      .container-term {
-        padding: 18px 6px;
-      }
-      h1 {
-        font-size: 1.3rem;
-      }
-    }
+  background-color: #264346;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+}
+.container-term {
+  width: 95%;
+  max-width: 900px;
+  margin: 40px auto 0 auto;
+  background: #223136;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  padding: 40px 32px 32px 32px;
+}
+h1,
+h2 {
+  font-family: "Merriweather", serif;
+}
+h1 {
+  color: #f7b600;
+  font-size: 2.2rem;
+  margin-bottom: 24px;
+  text-align: center;
+}
+h2 {
+  color: #87bbaa;
+  font-size: 1.3rem;
+  margin-top: 32px;
+  margin-bottom: 10px;
+}
+ul,
+p {
+  color: #fff;
+  font-size: 1.05rem;
+}
+.acceptance-form {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  color: #fff;
+}
+.accept-btn {
+  background-color: #f7b600;
+  color: #264346;
+  padding: 10px 32px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.accept-btn:hover {
+  background-color: #fff;
+  color: #264346;
+}
+.site-footer {
+  background-color: #1f3235;
+  padding: 12px 0;
+  margin-top: 40px;
+}
+.site-footer p {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #aaa;
+  margin: 0;
+}
+@media (max-width: 600px) {
+  .container-term {
+    padding: 18px 6px;
+  }
+  h1 {
+    font-size: 1.3rem;
+  }
+}

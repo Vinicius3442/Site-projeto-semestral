@@ -1,7 +1,7 @@
 .card {
-    background-color: #1f2a2e;
-    border-radius: 12px;
-    color: #fff;
+  background-color: #1f2a2e;
+  border-radius: 12px;
+  color: #fff;
 }
 
 input.form-control:focus {
@@ -10,7 +10,7 @@ input.form-control:focus {
 }
 
 .form-control {
-    background-color: #1f2a2e;
+  background-color: #1f2a2e;
 }
 
 .btn-warning {
@@ -23,10 +23,10 @@ input.form-control:focus {
 }
 
 .btn-outline-warning:hover {
-background-color: #ffd740;
-color: #121212;
-box-shadow: 0 4px 16px 0 rgba(255, 196, 0, 0.15);
-border-color: #ffd740;
-transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  background-color: #ffd740;
+  color: #121212;
+  box-shadow: 0 4px 16px 0 rgba(255, 196, 0, 0.15);
+  border-color: #ffd740;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
   color: #121212;
 }
