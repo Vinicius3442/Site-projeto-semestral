@@ -8,7 +8,7 @@
 
 ## Acesse o projeto online
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Acessar-121013?style=for-the-badge&logo=github&logoColor=white)](https://vinicius3442.github.io/Projetos-SENAI/thermo-charge/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Acessar-121013?style=for-the-badge&logo=github&logoColor=white)](https://vinicius3442.github.io/Thermocharge)
 
 ---
 
