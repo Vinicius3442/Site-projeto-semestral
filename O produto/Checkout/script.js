@@ -22,7 +22,7 @@ document.getElementById("quantity").addEventListener("input", function () {
   updateResumo();
 });
 function updateResumo() {
-  const unitPrice = 66.99;
+  const unitPrice = 129.99;
   const quantity = parseInt(document.getElementById("quantity").value, 10) || 1;
   const subtotal = unitPrice * quantity;
   document.getElementById("subtotal").textContent = `R$ ${subtotal
