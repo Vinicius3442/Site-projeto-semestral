@@ -1,85 +1,89 @@
-// pagamento.js
+// --- Troca entre métodos de pagamento ---
 function handlePaymentMethodChange() {
-  document.querySelectorAll('input[name="pagamento"]').forEach((input) => {
+  const radioButtons = document.querySelectorAll('input[name="pagamento"]');
+  radioButtons.forEach((input) => {
     input.addEventListener("change", () => {
-      document.getElementById("cartao-info").style.display =
-        input.id === "cartao" ? "block" : "none";
+      document.getElementById("cartao-info").style.display = input.id === "cartao" && input.checked ? "block" : "none";
     });
   });
 }
+
+// --- Atualização de quantidade ---
 function updateQuantity(change) {
   const input = document.getElementById("quantity");
   let value = parseInt(input.value, 10) || 1;
-  value += change;
-  if (value < 1) {
-    value = 1;
-  }
+  value = Math.max(1, value + change);
   input.value = value;
   updateResumo();
 }
+
+// --- Listener manual de input na quantidade ---
 document.getElementById("quantity").addEventListener("input", function () {
   if (this.value < 1) this.value = 1;
   updateResumo();
 });
+
+// --- Atualização geral do resumo do pedido ---
 function updateResumo() {
   const unitPrice = 129.99;
   const quantity = parseInt(document.getElementById("quantity").value, 10) || 1;
   const subtotal = unitPrice * quantity;
-  document.getElementById("subtotal").textContent = `R$ ${subtotal
-    .toFixed(2)
-    .replace(".", ",")}`;
-  let desconto = document
-    .getElementById("desconto")
-    .textContent.replace(/[^\d,]/g, "")
-    .replace(",", ".");
-  desconto = parseFloat(desconto) || 0;
-  let frete = document
-    .getElementById("freteResumo")
-    .textContent.replace(/[^\d,]/g, "")
-    .replace(",", ".");
-  frete = parseFloat(frete) || 0;
+  document.getElementById("subtotal").textContent = `R$ ${subtotal.toFixed(2).replace(".", ",")}`;
+
+  const descontoEl = document.getElementById("desconto");
+  const desconto = parseFloat(descontoEl.dataset.value || "0");
+
+  const freteText = document.getElementById("freteResumo").textContent.replace(/[^\d,]/g, "").replace(",", ".");
+  const frete = parseFloat(freteText) || 0;
+
   const total = subtotal - desconto + frete;
-  document.getElementById("totalResumo").textContent = `R$ ${total
-    .toFixed(2)
-    .replace(".", ",")}`;
+  document.getElementById("totalResumo").textContent = `R$ ${total.toFixed(2).replace(".", ",")}`;
 }
 
-function processPaymentSubmit() {
-  document
-    .getElementById("checkoutForm")
-    .addEventListener("submit", function (e) {
-      e.preventDefault();
-      const pagamento = document.querySelector(
-        'input[name="pagamento"]:checked'
-      ).value;
+// --- Aplicação de cupom ---
+const cuponsValidos = {
+  THERMO10: 10,
+  THERMO20: 20,
+  FRETEGRATIS: 0,
+};
 
-      const routes = {
-        Boleto: "./Boleto/index.html",
-        PIX: "./Pix/index.html",
-      };
+function applyDiscount() {
+  const inputCupom = document.getElementById("cupom");
+  const cupom = inputCupom.value.trim().toUpperCase();
+  const helpText = document.getElementById("cupomHelp");
+  const descontoEl = document.getElementById("desconto");
 
-      Swal.fire({
-        icon: "success",
-        title:
-          pagamento === "Cartao"
-            ? "Compra finalizada!"
-            : `Pagamento via ${pagamento}!`,
-        text:
-          pagamento === "Cartao"
-            ? "Pagamento via cartão processado."
-            : `Você será redirecionado para a página de início.`,
-        willClose: () => {
-          if (pagamento === "Boleto" || pagamento === "PIX") {
-            window.location.href = routes[pagamento];
-          } else {
-            window.location.href = "../../../index.html";
-          }
-        },
-      });
-    });
+  const quantity = parseInt(document.getElementById("quantity").value, 10) || 1;
+  const subtotal = 129.99 * quantity;
+
+  if (cuponsValidos.hasOwnProperty(cupom)) {
+    let desconto = cuponsValidos[cupom];
+    if (cupom === "FRETEGRATIS") {
+      document.getElementById("frete").value = "0";
+      document.getElementById("freteResumo").textContent = "R$ 0,00";
+    } else {
+      desconto = (desconto / 100) * subtotal;
+    }
+    descontoEl.textContent = `R$ ${desconto.toFixed(2).replace(".", ",")}`;
+    descontoEl.dataset.value = desconto;
+    helpText.textContent = "Cupom aplicado com sucesso!";
+  } else {
+    descontoEl.textContent = "R$ 0,00";
+    descontoEl.dataset.value = "0";
+    helpText.textContent = "Cupom inválido.";
+  }
+
+  updateResumo();
 }
 
-// endereco.js
+// --- Atualização do frete no resumo ---
+document.getElementById("frete").addEventListener("change", function () {
+  const freteValor = parseFloat(this.value);
+  document.getElementById("freteResumo").textContent = `R$ ${freteValor.toFixed(2).replace(".", ",")}`;
+  updateResumo();
+});
+
+// --- Preenchimento automático do endereço via CEP ---
 function initCEPListener() {
   document.getElementById("cep").addEventListener("blur", () => {
     const cep = document.getElementById("cep").value.replace(/\D/g, "");
@@ -89,115 +93,40 @@ function initCEPListener() {
       .then((resp) => resp.json())
       .then((data) => {
         if (!data.erro) {
-          document.getElementById("endereco").value = data.logradouro;
-          document.getElementById("cidade").value = data.localidade;
-          document.getElementById("estado").value = data.uf;
+          document.getElementById("endereco").value = data.logradouro || "";
+          document.getElementById("cidade").value = data.localidade || "";
+          document.getElementById("estado").value = data.uf || "";
         }
       });
   });
 }
 
-// resumo.js
-const cuponsValidos = {
-  THERMO10: 10,
-  THERMO20: 20,
-  FRETEGRATIS: 0,
-};
+// --- Processamento do pagamento e redirecionamento ---
+function processPaymentSubmit() {
+  document.getElementById("checkoutForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const pagamento = document.querySelector('input[name="pagamento"]:checked').value;
 
-function applyDiscount() {
-  const cupom = document.getElementById("cupom").value.trim().toUpperCase();
-  const desconto = cuponsValidos[cupom] || 0;
+    const routes = {
+      Boleto: "./Boleto/index.html",
+      PIX: "./Pix/index.html",
+    };
 
-  document.getElementById("desconto").dataset.value = desconto;
-  document.getElementById("cupomHelp").textContent = desconto
-    ? "Cupom aplicado com sucesso!"
-    : "Cupom inválido.";
-
-  updateResumo();
-}
-
-function updateResumo() {
-  const unitPrice = 66.99;
-  const quantity = parseInt(document.getElementById("quantity").value) || 1;
-  const freteInput = document.getElementById("frete");
-  const frete = parseFloat(freteInput.value);
-  const validFrete = isNaN(frete) ? 0 : frete;
-  const desconto =
-    parseFloat(document.getElementById("desconto").dataset.value) || 0;
-
-  const subtotal = unitPrice * quantity;
-  const total = subtotal + validFrete - desconto;
-
-  document.getElementById("subtotal").textContent = `R$ ${subtotal.toFixed(2)}`;
-  document.getElementById("freteResumo").textContent = `R$ ${validFrete.toFixed(
-    2
-  )}`;
-  document.getElementById("desconto").textContent = `R$ ${desconto.toFixed(2)}`;
-  document.getElementById("totalResumo").textContent = `R$ ${total.toFixed(2)}`;
-}
-
-function initResumoListeners() {
-  document.getElementById("frete").addEventListener("change", updateResumo);
-  ["input", "change"].forEach((evt) => {
-    document.getElementById("quantity").addEventListener(evt, updateResumo);
-    document.getElementById("cupom").addEventListener(evt, updateResumo);
+    Swal.fire({
+      icon: "success",
+      title: pagamento === "Cartao" ? "Compra finalizada!" : `Pagamento via ${pagamento}!`,
+      text: pagamento === "Cartao" ? "Pagamento via cartão processado." : "Você será redirecionado...",
+      willClose: () => {
+        window.location.href = routes[pagamento] || "../../../index.html";
+      },
+    });
   });
-  document.getElementById("desconto").dataset.value = 0;
-  updateResumo();
 }
 
+// --- Inicialização de eventos ---
 document.addEventListener("DOMContentLoaded", () => {
   handlePaymentMethodChange();
-  processPaymentSubmit();
-  initCardBrandDetection();
   initCEPListener();
-  initResumoListeners();
-});
-// Máscara para número do cartão
-document.addEventListener("DOMContentLoaded", function () {
-  const numeroCartao = document.getElementById("numero-cartao");
-  if (numeroCartao) {
-    numeroCartao.addEventListener("input", function (e) {
-      let value = this.value.replace(/\D/g, "").slice(0, 16);
-      value = value.replace(/(\d{4})(?=\d)/g, "$1 ");
-      this.value = value.trim();
-    });
-  }
-  // Máscara para validade MM/AA com validação de ano mínimo 2025 e mês máximo 12
-  const validade = document.getElementById("validade");
-  if (validade) {
-    validade.addEventListener("input", function (e) {
-      let value = this.value.replace(/\D/g, "").slice(0, 4);
-      if (value.length > 2) {
-        value = value.replace(/(\d{2})(\d{1,2})/, "$1/$2");
-      }
-      this.value = value;
-    });
-    validade.addEventListener("blur", function (e) {
-      const val = this.value;
-      const match = /^(\d{2})\/(\d{2})$/.exec(val);
-      if (match) {
-        let mes = parseInt(match[1], 10);
-        let ano = parseInt(match[2], 10);
-        // Considera anos 2000+
-        ano += 2000;
-        if (ano < 2025 || mes < 1 || mes > 12) {
-          this.setCustomValidity(
-            "Data de validade mínima: 01/25 e mês máximo: 12"
-          );
-        } else {
-          this.setCustomValidity("");
-        }
-      } else {
-        this.setCustomValidity("Formato inválido. Use MM/AA");
-      }
-    });
-  }
-  // Máscara para CVV
-  const cvv = document.getElementById("cvv");
-  if (cvv) {
-    cvv.addEventListener("input", function (e) {
-      this.value = this.value.replace(/\D/g, "").slice(0, 4);
-    });
-  }
+  processPaymentSubmit();
+  updateResumo(); // garantir que os valores estejam sincronizados na inicialização
 });

@@ -83,7 +83,10 @@ section h5 {
   transform: translateY(-5px);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
-
+.img-important{
+  height: 27rem;
+  width: 21rem;
+}
 footer {
   background-color: #263238;
 }
