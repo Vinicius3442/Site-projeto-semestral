@@ -1,23 +1,18 @@
 body {
-  background-color: #264346;
+  background-color: #3a5d61;
   color: #fff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  font-family: Arial, sans-serif;
 }
 .container-term {
   width: 95%;
   max-width: 900px;
   margin: 40px auto 0 auto;
-  background: #264346;
+  background: #3a5d61;
   border-radius: 16px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
   padding: 40px 32px 32px 32px;
-}
-h1,
-h2 {
-  font-family: "Merriweather", serif;
 }
 h1 {
   color: #f7b600;

@@ -1,4 +1,4 @@
-// --- Troca entre métodos de pagamento ---
+// Troca entre métodos de pagamento
 function handlePaymentMethodChange() {
   const radioButtons = document.querySelectorAll('input[name="pagamento"]');
   radioButtons.forEach((input) => {
@@ -8,7 +8,7 @@ function handlePaymentMethodChange() {
   });
 }
 
-// --- Atualização de quantidade ---
+// Atualização de quantidade
 function updateQuantity(change) {
   const input = document.getElementById("quantity");
   let value = parseInt(input.value, 10) || 1;
@@ -17,13 +17,13 @@ function updateQuantity(change) {
   updateResumo();
 }
 
-// --- Listener manual de input na quantidade ---
+// Listener de input na quantidadE
 document.getElementById("quantity").addEventListener("input", function () {
   if (this.value < 1) this.value = 1;
   updateResumo();
 });
 
-// --- Atualização geral do resumo do pedido ---
+// Atualização geral do resumo do pedido
 function updateResumo() {
   const unitPrice = 129.99;
   const quantity = parseInt(document.getElementById("quantity").value, 10) || 1;
@@ -40,7 +40,7 @@ function updateResumo() {
   document.getElementById("totalResumo").textContent = `R$ ${total.toFixed(2).replace(".", ",")}`;
 }
 
-// --- Aplicação de cupom ---
+// Aplicação de cupom
 const cuponsValidos = {
   THERMO10: 10,
   THERMO20: 20,
@@ -76,14 +76,14 @@ function applyDiscount() {
   updateResumo();
 }
 
-// --- Atualização do frete no resumo ---
+// Atualização do frete no resumo
 document.getElementById("frete").addEventListener("change", function () {
   const freteValor = parseFloat(this.value);
   document.getElementById("freteResumo").textContent = `R$ ${freteValor.toFixed(2).replace(".", ",")}`;
   updateResumo();
 });
 
-// --- Preenchimento automático do endereço via CEP ---
+// Preenchimento automático do endereço via CEP
 function initCEPListener() {
   document.getElementById("cep").addEventListener("blur", () => {
     const cep = document.getElementById("cep").value.replace(/\D/g, "");
@@ -101,7 +101,7 @@ function initCEPListener() {
   });
 }
 
-// --- Processamento do pagamento e redirecionamento ---
+// Processamento do pagamento e redirecionamento
 function processPaymentSubmit() {
   document.getElementById("checkoutForm").addEventListener("submit", function (e) {
     e.preventDefault();
@@ -123,10 +123,9 @@ function processPaymentSubmit() {
   });
 }
 
-// --- Inicialização de eventos ---
 document.addEventListener("DOMContentLoaded", () => {
   handlePaymentMethodChange();
   initCEPListener();
   processPaymentSubmit();
-  updateResumo(); // garantir que os valores estejam sincronizados na inicialização
+  updateResumo();
 });
